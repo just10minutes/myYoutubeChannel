@@ -15,11 +15,11 @@ export class HomePage {
 
 
   //channelID: string = 'UCbtVfS6cflbIXTZ0nGeRWVA';
-  channelID: string = 'UCfwHP1M0AFSPqTdjzXhV0Zg';
+  channelID: string = 'LetThisBeHidden';
   maxResults: string = '10';
   pageToken: string;
   //googleToken: string = 'AIzaSyBQtmWKpDfN0KS7FQW68WbGKzQX17V5fAY';
-  googleToken: string = 'AIzaSyDakOEmUYr0Fq_1-DQLkZCDSPn8vFuvVtg';
+  googleToken: string = 'LetThisBeHidden';
   //searchQuery: string = 'ravetraintv -kissing';
   searchQuery: string = '';
   posts: any = [];
