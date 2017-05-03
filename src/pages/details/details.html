@@ -1,0 +1,29 @@
+
+
+<ion-header>
+
+  <ion-navbar class="youtube-player-header" dark>
+    <ion-title>
+        {{post.snippet.title}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div id="player" class="embed-responsive embed-responsive-16by9">
+      <div id="placeholder" style="width: 100%" class="embed-responsive-item"></div>
+      <div class="embed-responsive-item" style="width: 100%; z-index: 90; background-color: black; background: url('assets/img/cs.png'); background-size:cover;" *ngIf = "!onPlaying"></div>
+    </div>
+    
+    <div>
+ <button ion-fab (click)="playVideo($event, post)">
+            <ion-icon name='play'></ion-icon>
+  
+  </button>
+  </div>
+</ion-content>
+
+
+

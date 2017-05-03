@@ -1,0 +1,121 @@
+<ion-header>
+
+  <div>
+    <ion-card>
+      <ion-navbar class="youtube-player-header" dark>
+        <div id="player" class="embed-responsive embed-responsive-16by9">
+          <div id="placeholder" style="width: 100%" class="embed-responsive-item"></div>
+<div class="embed-responsive-item" style="width: 100%; z-index: 90; background-color: black; background: url('assets/img/cs.png'); background-size:cover;">
+</div>
+</div>
+</ion-navbar>
+
+
+ 
+
+  <ion-card-content *ngIf="onPlaying">
+     
+    <ion-item style="padding-top: 5px;">
+<!-- <ion-thumbnail item-left>
+  <img src='assets/img/channellogo.jpg'>
+</ion-thumbnail> -->
+<!--<h4 class="item-text-wrap">{{videoDetails.snippet.title | slice:0:50}}{{videoDetails.snippet.title.length > 50 ? '...Read More' : ''}}</h4>-->
+<h4 class="item-text-wrap">{{videoDetails.snippet.title}}</h4>
+</ion-item>
+<ion-grid>
+  <ion-row class="videostats">
+    <ion-col col-2>
+      <ion-icon name="eye"><br>
+        <p>{{videoDetails.statistics.viewCount}}</p>
+      </ion-icon>
+    </ion-col>
+    <ion-col col-2>
+      <ion-icon name="thumbs-up"><br>
+        <p>{{videoDetails.statistics.likeCount}}</p>
+      </ion-icon>
+    </ion-col>
+    <ion-col col-2>
+      <ion-icon name="thumbs-down"><br>
+        <p>{{videoDetails.statistics.dislikeCount}}</p>
+      </ion-icon>
+    </ion-col>
+    <ion-col col-2>
+      <ion-icon name="chatboxes"><br>
+        <p>{{videoDetails.statistics.commentCount}}</p>
+      </ion-icon>
+    </ion-col>
+     <ion-col col-2>
+      <ion-icon name="menu" (click)="onDescriptionClick()"></ion-icon>
+    </ion-col>
+    <ion-col col-2>
+      <ion-icon name="share-alt" (click)="onShareClick()"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!--
+<ion-grid>
+  <ion-row class="videostats">
+    <ion-col col-3>
+      <ion-icon name="menu" (click)="onDescriptionClick()"></ion-icon>
+    </ion-col>
+    <ion-col col-3>
+      <ion-icon name="share-alt" (click)="onShareClick()"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+-->
+
+<div class="item item-text-wrap" *ngIf="descriptionClicked">
+  <ion-scroll scrollY="true" style="height:120px;">
+  <p>Description:</p>
+  <p>{{videoDetails.snippet.description}}</p>
+  </ion-scroll>
+  </div>
+  
+</ion-card-content>
+
+</ion-card>
+
+
+</div>
+
+</ion-header>
+
+
+
+
+<ion-content class="home">
+  <div *ngFor="let post of posts">
+    <ion-card class="adv-map">
+      <div style="position: relative">
+<div class="sixteen-nine">
+  <div class="content">
+    <img src="{{post.snippet.thumbnails.high.url}}">
+  </div>
+</div>
+<ion-fab top right class="fab-map">
+  <button ion-fab (click)="playVideo2(post)">
+            <ion-icon name='play'></ion-icon>
+          </button>
+</ion-fab>
+</div>
+<ion-item style="padding-top: 15px;">
+<ion-thumbnail item-left>
+  <img src='assets/img/channellogo.jpg'>
+</ion-thumbnail>
+<h2 class="item-text-wrap">{{post.snippet.title}}</h2>
+</ion-item>
+<ion-item>
+  <p class="item-text-wrap">{{post.statistics.viewCount}} Views &bull; {{post.statistics.likeCount}} Likes</p>
+  <br>
+  <button ion-button clear item-right primary>
+            <ion-icon name='share'></ion-icon>
+            SHARE
+          </button>
+</ion-item>
+
+</ion-card>
+</div>
+<button light (click)="loadMore()">Load More...</button>
+
+</ion-content>
