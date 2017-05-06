@@ -14,12 +14,12 @@ import { Http } from '@angular/http';
 export class HomePage {
 
 
-  //channelID: string = 'UCbtVfS6cflbIXTZ0nGeRWVA';
-  channelID: string = 'LetThisBeHidden';
+  channelID: string = 'UCbtVfS6cflbIXTZ0nGeRWVA';
+  //channelID: string = 'LetThisBeHidden';
   maxResults: string = '10';
   pageToken: string;
-  //googleToken: string = 'AIzaSyBQtmWKpDfN0KS7FQW68WbGKzQX17V5fAY';
-  googleToken: string = 'LetThisBeHidden';
+  googleToken: string = 'AIzaSyBQtmWKpDfN0KS7FQW68WbGKzQX17V5fAY';
+  //googleToken: string = 'LetThisBeHidden';
   //searchQuery: string = 'ravetraintv -kissing';
   searchQuery: string = '';
   posts: any = [];
