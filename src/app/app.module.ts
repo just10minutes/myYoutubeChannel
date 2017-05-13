@@ -10,7 +10,7 @@ import { DetailsPage } from '../pages/details/details';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { YoutubeService } from '../providers/youtube-service';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+
 
 @NgModule({
   declarations: [
@@ -36,8 +36,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
   providers: [
     StatusBar,
     SplashScreen,
-    YoutubeService,
-    YoutubeVideoPlayer,
+    YoutubeService,    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
